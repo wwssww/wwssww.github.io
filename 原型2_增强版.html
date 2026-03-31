@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- ========== 钉钉网页预览优化 Meta 标签 ========== -->
+    <title>天津烟草安全态势月报 | 2026年3月</title>
+    <!-- 基础 SEO -->
+    <meta name="description" content="天津烟草2026年3月安全态势月报：拦截攻击2,345次，发现漏洞27个，终端查杀病毒47个，整体态势平稳。">
+    <meta name="keywords" content="天津烟草,网络安全,态势月报,边界防御,漏洞监测,终端防护">
+    <!-- 钉钉/微信/QQ 卡片预览核心标签 (Open Graph) -->
+    <meta property="og:title" content="天津烟草安全态势月报 | 2026年3月">
+    <meta property="og:description" content="本月拦截互联网攻击2,345次，发现高危漏洞5个，终端查杀病毒47个，整体安全态势平稳，未发生重大网络安全事件。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <!-- 预览缩略图建议使用深色科技感图片，若无图片则钉钉会显示默认图标，此处留空不影响功能 -->
+    <meta property="og:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.UUq3hYnjQgTiYJlCOAPGsQHaGT?w=202&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+    <meta property="og:image:alt" content="天津烟草安全态势月报预览图">
+    <!-- Twitter Card 兼容 -->
+    <meta name="twitter:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.UUq3hYnjQgTiYJlCOAPGsQHaGT?w=202&h=180&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="天津烟草安全态势月报 | 2026年3月">
+    <meta name="twitter:description" content="本月拦截攻击2,345次，发现漏洞27个，终端查杀病毒47个，整体态势平稳。">
+    <!-- 钉钉特别优化：确保移动端预览友好 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- ========== 预览优化结束 ========== -->
+    
+    <!-- Font Awesome 6 (免费版) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', 'Microsoft YaHei', sans-serif;
+            background: #0a0f1e;
+            color: #eef4ff;
+            padding: 1rem 1rem 2rem 1rem;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 150, 255, 0.1) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 70%, rgba(100, 80, 200, 0.08) 0%, transparent 45%),
+                              linear-gradient(145deg, #0b1120 0%, #0a0f1c 100%);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+            padding-top: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #80c0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 5px rgba(0, 100, 255, 0.2);
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: #9cb4e0;
+            background: rgba(20, 40, 70, 0.6);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            border: 1px solid rgba(60, 140, 220, 0.4);
+        }
+
+        .card {
+            background: rgba(15, 30, 50, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 1.2rem 1.2rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 160, 255, 0.25);
+            box-shadow: 0 12px 25px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(70, 160, 255, 0.1) inset;
+            transition: transform 0.1s, border-color 0.2s;
+        }
+
+        .card:active {
+            transform: scale(0.99);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid rgba(80, 170, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .card-header i {
+            font-size: 1.4rem;
+            width: 2.2rem;
+            height: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 110, 220, 0.4);
+            border-radius: 18px;
+            color: #a0d0ff;
+            border: 1px solid #2e79c0;
+        }
+
+        .card-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #e2f0ff;
+        }
+
+        .desc-text {
+            font-size: 1rem;
+            line-height: 1.45;
+            color: #eef3ff;
+            padding: 0.3rem 0;
+            font-weight: 500;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .desc-text i {
+            margin-right: 0.6rem;
+            font-size: 1rem;
+            color: #6bb5ff;
+            width: 1.6rem;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #ffd966;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0 0.2rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 0 0.1rem;
+        }
+
+        .sub-detail {
+            font-size: 0.85rem;
+            color: #b8d0f0;
+            margin-top: 0.3rem;
+            padding-left: 2rem;
+            border-left: 2px solid #2f7bc0;
+        }
+
+        .event-card {
+            background: rgba(25, 45, 70, 0.7);
+            border: 1px solid #ffaa55;
+        }
+
+        .event-icon {
+            color: #ffaa55;
+        }
+
+        hr {
+            margin: 0.8rem 0;
+            border: 0.5px solid rgba(100, 170, 255, 0.2);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.65rem;
+            color: #5a7caa;
+            margin-top: 1.2rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid #1e3858;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="title">天津烟草安全态势</div>
+        <div class="date">2026年3月</div>
+    </div>
+
+    <!-- 1. 边界防御（整合网站监控） -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-shield-alt"></i>
+            <h2>边界防御</h2>
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-chart-line"></i>
+            本月拦截互联网攻击 <span class="stat-number">2,345</span> 次，其中移动办公拦截 <span class="stat-number">345</span> 次，外网网站拦截 <span class="stat-number">678</span> 次，邮件系统拦截 <span class="stat-number">211</span> 次。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-location-dot"></i>
+            本月拦截攻击IP总计 <span class="stat-number">87</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-chart-pie"></i>
+            本月攻击主要类型 TOP3：SQL注入 <span class="stat-number">892</span> 次、XSS跨站脚本 <span class="stat-number">456</span> 次、暴力破解 <span class="stat-number">234</span> 次。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-globe"></i>
+            本月网站监控未发现异常事件。
+        </div>
+    </div>
+
+    <!-- 2. 主机防护情况 -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-server"></i>
+            <h2>主机防护情况</h2>
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-database"></i>
+            本月监测到主机数量共计 <span class="stat-number">156</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-shield-virus"></i>
+            本月终端拦截攻击 <span class="stat-number">1,023</span> 次。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-chart-simple"></i>
+            主机攻击类型 TOP3：暴力破解 <span class="stat-number">56</span> 个、Web后门 <span class="stat-number">12</span> 个、反弹shell <span class="stat-number">5</span> 个。
+        </div>
+    </div>
+
+    <!-- 3. 终端防护情况 -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-laptop-code"></i>
+            <h2>终端防护情况</h2>
+        </div>
+        <div class="desc-text">
+            <i class="far fa-clock"></i>
+            本月活跃的终端共计 <span class="stat-number">1,205</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-bug"></i>
+            本月查杀终端病毒 <span class="stat-number">47</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-list-ul"></i>
+            查杀类型 TOP3：挖矿木马 <span class="stat-number">23</span> 个、勒索病毒 <span class="stat-number">12</span> 个、蠕虫病毒 <span class="stat-number">8</span> 个。
+        </div>
+    </div>
+
+    <!-- 4. 资产情况 -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-building"></i>
+            <h2>资产情况</h2>
+        </div>
+        <div class="desc-text">
+            <i class="far fa-folder-open"></i>
+            本月资产情况共发现 <span class="stat-number">100</span> 个业务系统资产，其中互联网出口映射资产 <span class="stat-number">29</span> 个，内网资产 <span class="stat-number">71</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-cubes"></i>
+            组件资产涉及主机 <span class="stat-number">58</span> 个，组件总数共计 <span class="stat-number">33,650</span> 个。
+        </div>
+    </div>
+
+    <!-- 5. 漏洞情况 -->
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-bug"></i>
+            <h2>漏洞情况</h2>
+        </div>
+        <div class="desc-text">
+            <i class="far fa-file-alt"></i>
+            本月发现漏洞 <span class="stat-number">27</span> 个，其中高危漏洞 <span class="stat-number">5</span> 个、中危漏洞 <span class="stat-number">12</span> 个、低危漏洞 <span class="stat-number">10</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-chart-pie"></i>
+            漏洞类型 TOP3：SQL注入 <span class="stat-number">8</span> 个、XSS跨站脚本 <span class="stat-number">7</span> 个、弱口令 <span class="stat-number">5</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-building"></i>
+            涉及到的关键业务系统包括：营销系统、专卖管理系统、办公自动化系统。
+        </div>
+    </div>
+
+    <!-- 6. 本月重大事件 -->
+    <div class="card event-card">
+        <div class="card-header">
+            <i class="fas fa-star-of-life event-icon"></i>
+            <h2>本月重大事件</h2>
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-chart-line"></i>
+            本月完成开源组件及漏洞探测工作，共发现 <span class="stat-number">58</span> 个系统的 <span class="stat-number">33,650</span> 个组件资产，发现相关漏洞 <span class="stat-number">27</span> 个。
+        </div>
+        <div class="desc-text">
+            <i class="fas fa-eye"></i>
+            本月完成暴露面资产梳理服务，发现影子资产 <span class="stat-number">12</span> 个，公众号、小程序、APP资产共计 <span class="stat-number">8</span> 个，敏感文件资产 <span class="stat-number">23</span> 个，源代码文件 <span class="stat-number">15</span> 个，发现问题隐患 <span class="stat-number">9</span> 个。
+        </div>
+        <hr>
+        <div class="desc-text">
+            <i class="far fa-comment-dots"></i>
+            整体安全态势平稳，未发生重大网络安全事件。
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <i class="far fa-eye"></i> 数据基于2026年3月安全监测 · 移动端月报
+    </div>
+</div>
+</body>
+</html>
